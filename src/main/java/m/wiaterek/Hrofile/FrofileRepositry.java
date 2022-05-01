@@ -34,4 +34,8 @@ public class FrofileRepositry {
 		return jdbcTemplate.update("update material set material_prefix = ? where material.material_id = ?",
 				materials.getMaterial_prefix(), materials.getMaterial_id());
 	}
+	public int delete(Material materials) {
+		return jdbcTemplate.update("delete from material where material.material_id = ?",
+				materials.getMaterial_id());
+	}	
 }
